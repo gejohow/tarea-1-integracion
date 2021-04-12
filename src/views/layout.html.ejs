@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="<%= assetPath('app.css') %>">
+</head>
+<body>
+
+  <div class="topnav">
+    <a class="active" href="/">HOME</a>
+    <div class="search-container">
+      <form action="<%= charactersPath %>" method="GET">
+        <input type="text" placeholder="Search Character" name="search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+    </div>
+  </div>
+  <%- body %>
+
+  <script src="<%= assetPath('app.js') %>"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<% character.forEach((char) => { %>
+    <h2>Name: <%= char.name %></h2>
+<% }) %>
+
+<div id="images">
+    <a>
+      <img class="profilepic" src="<%= character[0].img %>"/>
+    </a>
+
+<table>
+    <tr>
+        <td>
+            <a>Char_id</a>
+        </td>
+        <td>
+            <a>Occupation</a>
+        </td>
+        <td>
+            <a>Status</a>
+        </td>
+        <td>
+            <a>Nickname</a>
+        </td>
+        <td>
+            <a>Portrayed</a>
+        </td>
+        <td>
+            <a>Category</a>
+        </td>
+        <td>
+            <a>Appereances in Breaking Bad</a>
+        </td>
+        <td>
+            <a>Appereances in Better Call Saul</a>
+        </td>
+    </tr>
+    <% character.forEach((char) => { %>
+        <tr>
+          <td>
+              <a><%= char.char_id %></a>
+          </td>
+          <td>
+              <a><%= char.occupation %></a>
+          </td>
+          <td>
+              <a><%= char.status %></a>
+          </td>
+          <td>
+            <a><%= char.nickname %></a>
+          </td>
+            <td>
+                <a><%= char.portrayed %></a>
+            </td>
+            <td>
+                <a><%= char.category %></a>
+            </td>
+            <td>
+                <% char.appearance.forEach((season) => { %>
+                    <a href="/bbseasons/<%= season %>"><%= season %> , </a>
+                <% }) %>
+            </td>
+            <td>
+                <% char.better_call_saul_appearance.forEach((season) => { %>
+                    <a href="/saulseasons/<%= season %>"><%= season %> , </a>
+                <% }) %>
+            </td>
+        </tr>
+      <% }) %>
+  </table>
+
+<h3> Character Quotes</h3>
+<table>
+    <tr>
+        <td>
+            <a>Quote_id</a>
+        </td>
+        <td>
+            <a>Quote</a>
+        </td>
+        <td>
+            <a>Author</a>
+        </td>
+        <td>
+            <a>Series</a>
+        </td>
+    </tr>
+    <% quotes.forEach((quote) => { %>
+        <tr>
+          <td>
+              <a><%= quote.quote_id %></a>
+          </td>
+          <td>
+              <a><%= quote.quote %></a>
+          </td>
+          <td>
+            <a><%= quote.author %></a>
+        </td>
+          <td>
+              <a><%= quote.series %></a>
+          </td>
+        </tr>
+      <% }) %>
+  </table>

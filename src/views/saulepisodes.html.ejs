@@ -1,0 +1,21 @@
+<h2>Season <%- season %> of <%- series %></h2>
+
+<table>
+    <tr>
+        <td>
+            <a>Episode</a>
+        </td>
+        <td>
+            <a>Title</a>
+        </td>
+    </tr>
+    <% filtered.forEach((episode) => { %>
+      <tr>
+        <td>
+            <a><%= episode.episode %></a>
+        </td>
+        <td>
+            <a href="<%= episode.season %>/<%= episode.episode %>"><%= episode.title %></a>
+      </tr>
+    <% }) %>
+  </table>

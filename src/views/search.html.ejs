@@ -1,0 +1,22 @@
+<table>
+    <tr>
+        <td>
+            <a>Char_id</a>
+        </td>
+        <td>
+            <a>Name</a>
+        </td>
+    </tr>
+    <% final.forEach((fin) => { %>
+        <% fin.forEach((char) => { %>
+            <tr>
+              <td>
+                  <a><%= char.char_id %></a>
+              </td>
+              <td>
+                <a href="<%= showCharacterPath(char.name) %>"><%= char.name %> </a>
+              </td>
+            </tr>
+          <% }) %>
+      <% }) %>
+  </table>
